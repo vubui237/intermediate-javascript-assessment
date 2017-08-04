@@ -158,7 +158,7 @@ forgetter = (name) => {
 // *************
 // * PROBLEM 6 *
 // *************
-
+//
 // Create a function called frodo. frodo will take in two parameters:
 // startingHungerValue (Number) and startingDangerValue (Number).
 // frodo will need to store those values on internal variables.
