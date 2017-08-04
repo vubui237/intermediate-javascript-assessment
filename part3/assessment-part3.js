@@ -14,9 +14,9 @@
 
 // CODE HERE...
 callBinding = (arr, update, ID) => {
-    var filtered = []
-    arr.filter((x)=> {x.id === ID ? filtered.push(x) : 0;})
-
+    let ind = "";
+    arr.map((x,i)=> {x.id === ID ? ind = i : 0;})
+    return update.call(arr[ind], 'Trogdor');
 }
 
 
@@ -33,6 +33,11 @@ callBinding = (arr, update, ID) => {
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+applyBinding = (arr, update, ID) => {
+    let ind = "";
+    arr.map((x,i)=> {x.id === ID ? ind = i : 0;})
+    return update.apply(arr[ind], ['being majestic', 'eating rainbows']);
+}
 
 
 
@@ -53,6 +58,11 @@ callBinding = (arr, update, ID) => {
 var foo;
 
 // CODE HERE...
+promiseMe = ($q) => {
+    var deferred = $q.defer();
+    setTimeout(()=> {foo = 'bar'; deferred.resolve(foo);}, 20)
+    return deferred.promise;
+}
 
 
 
@@ -69,3 +79,10 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+emailList = ($q, $http) => {
+    return $http.get('/api/users').then(function(response) {
+        //console.log(response);
+        return response.data.map((function(x){return x.email;}))
+
+    })
+}
