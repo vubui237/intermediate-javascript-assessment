@@ -13,6 +13,11 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+callBinding = (arr, update, ID) => {
+    var filtered = []
+    arr.filter((x)=> {x.id === ID ? filtered.push(x) : 0;})
+
+}
 
 
 
